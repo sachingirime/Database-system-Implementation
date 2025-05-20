@@ -41,25 +41,25 @@ This project was developed in multiple phases, each representing a major subsyst
 
 ### 🖥️ CLI in Action
 > _Example of entering a query and getting tabular output + plan summary_  
-![CLI Screenshot](screenshots/cli_query.png)
+![CLI Screenshot](screenshots/cli.png)
 
 ---
 
 ### 🧠 Query Plan Visualization (Graphviz)
 > _Exported DOT graph rendered for a join query_  
-![Graphviz Plan](screenshots/graphviz_plan.png)
+![Graphviz Plan](screenshots/execution_tree.png)
 
 ---
 
-### 📦 B+ Tree Structure (Debug Output)
+### 📦 B+ Tree Structure (Create Index)
 > _Shows the tree building from insertions during index creation_  
-![BPlusTree](screenshots/bplustree_debug.png)
+![BPlusTree](screenshots/btreeindex.png)
 
 ---
 
 ### 🧮 Disk-backed Heap File (Visual Debug)
 > _Illustrating table storage in `.dat` format and record layout_  
-![HeapFile](screenshots/heap_file.png)
+![HeapFile](screenshots/catalog.png)
 
 ---
 
