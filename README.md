@@ -100,7 +100,7 @@ MiniSQL/
 ```bash
 cd code
 make init
-make main.out
+make all
 ```
 
 💻 Start the CLI
@@ -109,6 +109,7 @@ make main.out
 ```
 
 🧪 Sample SQL Queries
+
 -- 1. Simple selection
 ```bash
 SELECT * FROM nation WHERE n_regionkey = 1;
