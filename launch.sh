@@ -1,4 +1,4 @@
 #!/bin/bash
 cd code
-make main.out
+make all
 ./execs/main.out
