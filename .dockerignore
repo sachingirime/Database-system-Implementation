@@ -1,3 +1,12 @@
+# Ignore source files in final image — they’re only needed in builder stage
+code/
+compiler/
+headers/
+project/
+source/
+tests/
+
+# Prevent build artifacts from polluting context
 *.tbl
 *.dat
 *.bin
@@ -7,6 +16,8 @@
 *.so
 object/
 execs/
+
+# Ignore media & extras
 *.png
 *.jpg
 *.jpeg
@@ -16,9 +27,11 @@ execs/
 *.zip
 *.tar.gz
 *.pdf
+
+# Ignore IDE/editor files
+.vscode/
+.cache/
 __pycache__/
 *.pyc
 *.pyo
-.cache/
 build/
-.vscode/
