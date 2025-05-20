@@ -1,5 +1,6 @@
 # --- Stage 1: Builder ---
-FROM ubuntu:22.04 as builder
+FROM ubuntu:22.04 AS builder
+
 
 RUN apt-get update && apt-get install -y \
     build-essential g++ flex bison byacc sqlite3 libsqlite3-dev make curl git
