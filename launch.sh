@@ -1,4 +1,3 @@
 #!/bin/bash
-cd code
-make all
+# Just run the CLI - assume it is already compiled in Dockerfile
 ./execs/main.out

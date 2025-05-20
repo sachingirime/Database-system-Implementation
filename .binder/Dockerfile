@@ -1,17 +1,25 @@
-FROM ubuntu:22.04
+FROM debian:bullseye-slim
 
-# Install dependencies
-RUN apt-get update -y && apt-get upgrade -y && apt-get install -y \
-    curl make byacc bison gcc g++ yacc flex sqlite3 libsqlite3-dev git
+# Install required tools
+RUN apt-get update -y && apt-get install -y \
+    build-essential \
+    flex \
+    bison \
+    byacc \
+    sqlite3 \
+    libsqlite3-dev \
+    curl \
+    git \
+    make
 
-# Set working directory inside container
+# Set working directory
 WORKDIR /home/minisql
 
-# Copy all project files into container
+# Copy source code
 COPY . .
 
-# Build the project
-RUN cd code && make init && make main.out
+# Build the project during image build to avoid runtime compile
+RUN cd code && make init && make all
 
-# Default command on container start
+# Start with an interactive shell
 CMD ["/bin/bash"]
