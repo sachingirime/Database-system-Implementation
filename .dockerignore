@@ -1,4 +1,3 @@
-# Prevent build artifacts from polluting context
 *.tbl
 *.dat
 *.bin
@@ -8,22 +7,14 @@
 *.so
 object/
 execs/
-
-# Ignore media & extras
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.mp4
-*.avi
-*.zip
-*.tar.gz
-*.pdf
-
-# Ignore IDE/editor files
 .vscode/
 .cache/
 __pycache__/
 *.pyc
 *.pyo
 build/
+*.zip
+*.tar.gz
+*.mp4
+*.avi
+*.pdf
