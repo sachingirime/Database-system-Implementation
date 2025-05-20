@@ -41,7 +41,7 @@ This project was developed in multiple phases, each representing a major subsyst
 
 ### 🖥️ CLI in Action
 > _Example of entering a query and getting tabular output + plan summary_  
-![CLI Screenshot](screenshots/cli.png)
+![CLI Screenshot](screenshots/cli.png){ width=600px }
 
 ---
 
@@ -58,7 +58,7 @@ This project was developed in multiple phases, each representing a major subsyst
 ---
 
 ### 🧮 Disk-backed Heap File (Visual Debug)
-> _Illustrating table storage in `.dat` format and record layout_  
+> _Illustrating table storage in tpc-h data
 ![HeapFile](screenshots/catalog.png)
 
 ---
