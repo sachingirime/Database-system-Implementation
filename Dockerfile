@@ -1,9 +1,17 @@
 FROM ubuntu:22.04
-RUN apt-get update -y
-RUN apt-get upgrade -y
-RUN apt-get install -y curl
-RUN apt-get install -y make
-RUN apt-get install -y bison
-RUN apt-get install -y gcc g++
-RUN apt-get install -y yacc flex sqlite3 libsqlite3-dev
-WORKDIR /root
+
+# Install dependencies
+RUN apt-get update -y && apt-get upgrade -y && apt-get install -y \
+    curl make bison gcc g++ yacc flex sqlite3 libsqlite3-dev git
+
+# Set working directory inside container
+WORKDIR /home/minisql
+
+# Copy all project files into container
+COPY . .
+
+# Build the project
+RUN cd code && make init && make main.out
+
+# Default command on container start
+CMD ["/bin/bash"]
