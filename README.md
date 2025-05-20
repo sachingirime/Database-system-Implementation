@@ -41,7 +41,7 @@ This project was developed in multiple phases, each representing a major subsyst
 
 ### 🖥️ CLI in Action
 > _Example of entering a query and getting tabular output + plan summary_  
-<img src="screenshots/cli.png" alt="CLI Screenshot" width="400"/>
+<img src="screenshots/cli.png" alt="CLI Screenshot" width="600"/>
 
 
 ---
