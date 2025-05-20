@@ -1,0 +1,69 @@
+OK!
+FIle path --->  lineitem.dat
+Heap file --->  lineitem.heap
+text file --->  /home/sachin/database/2025-spring-cse177-eecs277/data/lineitem.tbl
+File opened!lineitem.heap
+File created.0
+File opened!lineitem.heap
+File Opened.0
+0x55cb382dbe00
+FIle path --->  orders.dat
+Heap file --->  orders.heap
+text file --->  /home/sachin/database/2025-spring-cse177-eecs277/data/orders.tbl
+File opened!orders.heap
+File created.0
+File opened!orders.heap
+File Opened.0
+0x55cb3830f250
+FIle path --->  customer.dat
+Heap file --->  customer.heap
+text file --->  /home/sachin/database/2025-spring-cse177-eecs277/data/customer.tbl
+File opened!customer.heap
+File created.0
+File opened!customer.heap
+File Opened.0
+0x55cb38310b50
+SCANS
++++++++++++++++++++++++
+SCAN lineitem {(l_orderkey:INTEGER [15000], l_partkey:INTEGER [2000], l_suppkey:INTEGER [100], l_linenumber:INTEGER [7], l_quantity:FLOAT [50], l_extendedprice:FLOAT [35921], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2518], l_commitdate:STRING [2460], l_receiptdate:STRING [2529], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [60175])[60175] [lineitem.dat]
+}
+SCAN orders {(o_orderkey:INTEGER [15000], o_custkey:INTEGER [1000], o_orderstatus:STRING [3], o_totalprice:FLOAT [14996], o_orderdate:STRING [2401], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:INTEGER [1], o_comment:STRING [15000])[15000] [orders.dat]
+}
+SCAN customer {(c_custkey:INTEGER [1500], c_name:STRING [1500], c_address:STRING [1500], c_nationkey:INTEGER [25], c_phone:STRING [1500], c_acctbal:FLOAT [1499], c_mktsegment:STRING [5], c_comment:STRING [1500])[1500] [customer.dat]
+}
+Selection applied on table index 0: estimated tuples reduced from 60175 to 6686.
+Selection applied on table index 2: estimated tuples reduced from 1500 to 1.
+
+PUSH DOWN SELECTION
++++++++++++++++++++++++
+SELECT (l_quantity > 25.000000 AND l_discount < 0.030000 ) {(l_orderkey:INTEGER [15000], l_partkey:INTEGER [2000], l_suppkey:INTEGER [100], l_linenumber:INTEGER [7], l_quantity:FLOAT [50], l_extendedprice:FLOAT [35921], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2518], l_commitdate:STRING [2460], l_receiptdate:STRING [2529], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [60175])[6686] [lineitem.dat]
+} SCAN lineitem {(l_orderkey:INTEGER [15000], l_partkey:INTEGER [2000], l_suppkey:INTEGER [100], l_linenumber:INTEGER [7], l_quantity:FLOAT [50], l_extendedprice:FLOAT [35921], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2518], l_commitdate:STRING [2460], l_receiptdate:STRING [2529], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [60175])[60175] [lineitem.dat]
+}
+
+SCAN orders {(o_orderkey:INTEGER [15000], o_custkey:INTEGER [1000], o_orderstatus:STRING [3], o_totalprice:FLOAT [14996], o_orderdate:STRING [2401], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:INTEGER [1], o_comment:STRING [15000])[15000] [orders.dat]
+}
+SELECT (c_name = 'Customer#000000011' ) {(c_custkey:INTEGER [1500], c_name:STRING [1500], c_address:STRING [1500], c_nationkey:INTEGER [25], c_phone:STRING [1500], c_acctbal:FLOAT [1499], c_mktsegment:STRING [5], c_comment:STRING [1500])[1] [customer.dat]
+} SCAN customer {(c_custkey:INTEGER [1500], c_name:STRING [1500], c_address:STRING [1500], c_nationkey:INTEGER [25], c_phone:STRING [1500], c_acctbal:FLOAT [1499], c_mktsegment:STRING [5], c_comment:STRING [1500])[1500] [customer.dat]
+}
+
+using Hash Join for tables 
+Joining: 1 with 2
+using Hash Join for tables 
+Joining: 0 with 1
+Final estimated tuples before write out: 1
+QUERY EXECUTION TREE: OUTPUT {(sum:FLOAT [1])[1] []
+} SUM {(sum:FLOAT [1])[1] []
+} JOIN (l_orderkey = o_orderkey) (l_orderkey:INTEGER [15000], l_partkey:INTEGER [2000], l_suppkey:INTEGER [100], l_linenumber:INTEGER [7], l_quantity:FLOAT [50], l_extendedprice:FLOAT [35921], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2518], l_commitdate:STRING [2460], l_receiptdate:STRING [2529], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [60175], o_orderkey:INTEGER [15000], o_custkey:INTEGER [1000], o_orderstatus:STRING [3], o_totalprice:FLOAT [14996], o_orderdate:STRING [2401], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:INTEGER [1], o_comment:STRING [15000], c_custkey:INTEGER [1500], c_name:STRING [1500], c_address:STRING [1500], c_nationkey:INTEGER [25], c_phone:STRING [1500], c_acctbal:FLOAT [1499], c_mktsegment:STRING [5], c_comment:STRING [1500])[0] [lineitem.dat]
+ { Left: SELECT (l_quantity > 25.000000 AND l_discount < 0.030000 ) {(l_orderkey:INTEGER [15000], l_partkey:INTEGER [2000], l_suppkey:INTEGER [100], l_linenumber:INTEGER [7], l_quantity:FLOAT [50], l_extendedprice:FLOAT [35921], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2518], l_commitdate:STRING [2460], l_receiptdate:STRING [2529], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [60175])[6686] [lineitem.dat]
+} SCAN lineitem {(l_orderkey:INTEGER [15000], l_partkey:INTEGER [2000], l_suppkey:INTEGER [100], l_linenumber:INTEGER [7], l_quantity:FLOAT [50], l_extendedprice:FLOAT [35921], l_discount:FLOAT [11], l_tax:FLOAT [9], l_returnflag:STRING [3], l_linestatus:STRING [2], l_shipdate:STRING [2518], l_commitdate:STRING [2460], l_receiptdate:STRING [2529], l_shipinstruct:STRING [4], l_shipmode:STRING [7], l_comment:STRING [60175])[60175] [lineitem.dat]
+}
+ Right: JOIN (o_custkey = c_custkey) (o_orderkey:INTEGER [15000], o_custkey:INTEGER [1000], o_orderstatus:STRING [3], o_totalprice:FLOAT [14996], o_orderdate:STRING [2401], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:INTEGER [1], o_comment:STRING [15000], c_custkey:INTEGER [1500], c_name:STRING [1500], c_address:STRING [1500], c_nationkey:INTEGER [25], c_phone:STRING [1500], c_acctbal:FLOAT [1499], c_mktsegment:STRING [5], c_comment:STRING [1500])[1] [orders.dat]
+ { Left: SCAN orders {(o_orderkey:INTEGER [15000], o_custkey:INTEGER [1000], o_orderstatus:STRING [3], o_totalprice:FLOAT [14996], o_orderdate:STRING [2401], o_orderpriority:STRING [5], o_clerk:STRING [1000], o_shippriority:INTEGER [1], o_comment:STRING [15000])[15000] [orders.dat]
+} Right: SELECT (c_name = 'Customer#000000011' ) {(c_custkey:INTEGER [1500], c_name:STRING [1500], c_address:STRING [1500], c_nationkey:INTEGER [25], c_phone:STRING [1500], c_acctbal:FLOAT [1499], c_mktsegment:STRING [5], c_comment:STRING [1500])[1] [customer.dat]
+} SCAN customer {(c_custkey:INTEGER [1500], c_name:STRING [1500], c_address:STRING [1500], c_nationkey:INTEGER [25], c_phone:STRING [1500], c_acctbal:FLOAT [1499], c_mktsegment:STRING [5], c_comment:STRING [1500])[1500] [customer.dat]
+}
+ } }
+
+
+
+Build phase over

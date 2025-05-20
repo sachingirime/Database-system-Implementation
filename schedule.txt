@@ -1,0 +1,115 @@
+Week 1 (Jan 19)
+- Lecture
+	- M: no lecture, no lab (Martin Luther King Jr. Holiday)
+	- W: syllabus; SQL + relational algebra overview; DBMS architecture overview; project discussion
+- Project
+	- Project 1 (Database Catalog) out
+
+
+Week 2 (Jan 26)
+- Lecture: Ch 16 (Query Compiler)
+	- M: catalog; query parser (16.1)
+	- W: logical query plan (16.3)
+
+
+Week 3 (Feb 2)
+- Lecture: Ch 16 (Query Compiler)
+	- M: cost-based plan selection (16.5); Quiz 1
+	- W: operator cost estimation; examples (16.4); join ordering; dynamic programming algorithm (16.6)
+- Quiz 1 (W)
+
+
+Week 4 (Feb 9)
+- Lecture: Ch 16 (Query Compiler)
+	- M: join ordering; dynamic programming algorithm (16.6); graph-based join representation
+	- W: Project 2 detailed discussion of the code; Quiz 2
+
+
+Week 5 (Feb 16)
+- Lecture: Ch 13 (Storage)
+	- M: no lecture, no office hours (Presidents Day Holiday)
+	- W: storage hierarchy (13.1-13.3); record & block layout (13.5, 13.7); modifications (13.8)
+- Project
+  - Project 1 (Database Catalog) due in the lab
+  - Project 2 (Query Compiler) out
+- Quiz 2 (W)
+
+
+Week 6 (Feb 23)
+- Lecture: Ch 13 (Storage)
+	- M: record & block layout (13.5, 13.7); modifications (13.8)
+	- W: disk failures & RAID (13.4)
+
+
+Week 7 (Mar 2)
+- Lecture: Ch 15 (Query Execution)
+	- M: Project 2 discussion; Quiz 3
+	- W: query execution tree structure; GetNext iterator; materialization vs. pipelining; Scan, Select, Project, WriteOut operators
+- Quiz 3 (W)
+
+
+Week 8 (Mar 9)
+- Lecture: Ch 15 (Query Execution)
+	- M: one-pass algorithms (15.1, 15.2); 
+	- W: in-memory join; nested loops join (15.3);
+- Project
+  - Project 2 (Query Compiler) due in the lab
+  - Project 3 (Single-Table Relational Algebra Operators) out
+- Quiz 4 (W)
+
+
+Week 9 (Mar 16)
+- Lecture: Ch 15 (Query Execution)
+	- M: sorting two-pass algorithms (15.4)
+	- W: hashing two-pass algorithms; hash-join (15.5)
+- Quiz 5 (W)
+
+
+Week 10 (Mar 30)
+- Lecture: Ch 15 (Hybrid-Hash); Ch 14 (Indexes)
+	- M: Hybrid-hash join (15.5)
+	- W: Index classification (14.1)
+
+
+Week 11 (Apr 6)
+- Lecture: Ch 14 (Indexes)
+	- M: B-Trees (general and INSERT) (14.2)
+	- W: B-Trees (INSERT and DELETE) (14.2)
+- Project
+  - Project 3 (Single-Table Relational Algebra Operators) due in the lab
+  - Project 4 (Join Operators) out
+- Quiz 6 (W)
+
+
+Week 12 (Apr 13)
+- Lecture: Ch 14 (Indexes)
+	- M: multidimensional indexes (14.4); kd-tree (14.6.1-14.6.5)
+	- W: quad tree (14.6.6); R-tree (14.6.7)
+- Quiz 7 (W)
+
+
+Week 13 (Apr 20)
+- Lecture: Ch 14 (Indexes)
+	- M: extensible hash tables; linear hash tables (14.3)
+	- W: bitmap indexes (14.7)
+- Project
+  - Project 4 (Join Operators) due in the lab
+  - Project 5 (Complete Database Server) out
+- Quiz 8 (W)
+
+
+Week 14 (Apr 27)
+- Lecture: Ch 17 (Coping with System Failures)
+	- M: in-depth hash tables and bitmap indexes
+	- W: general introduction to transactional databases and logging (17.1)
+- Quiz 9 (W)
+
+
+Week 15 (May 4)
+- Lecture: Ch 17 (Coping with System Failures)
+	- M: UNDO and REDO logging (17.2, 17.3)
+	- W: UNDO/REDO logging (17.4); project & course discussion
+- Quiz 10 (W)
+
+May 14 (Wednesday), 11:30-14:30: Final project presentation & demo (Classroom and Office 1, room 113)
+

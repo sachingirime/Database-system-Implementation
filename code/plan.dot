@@ -1,0 +1,16 @@
+digraph QueryPlan {
+  node [shape=box, style=rounded];
+  node0 [label="OUTPUT"];
+  node1 [label="SUM"];
+  node0 -> node1;
+  node2 [label="SYM-HASH-JOIN\nl_orderkey=o_orderkey"];
+  node1 -> node2;
+  node3 [label="SCAN\nlineitem"];
+  node2 -> node3;
+  node4 [label="SYM-HASH-JOIN\no_custkey=c_custkey"];
+  node2 -> node4;
+  node5 [label="SCAN\norders"];
+  node4 -> node5;
+  node6 [label="SCAN-INDEX\ncustomer"];
+  node4 -> node6;
+}
