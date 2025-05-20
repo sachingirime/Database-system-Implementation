@@ -1,11 +1,3 @@
-# Ignore source files in final image — they’re only needed in builder stage
-code/
-compiler/
-headers/
-project/
-source/
-tests/
-
 # Prevent build artifacts from polluting context
 *.tbl
 *.dat
