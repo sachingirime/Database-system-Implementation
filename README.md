@@ -35,9 +35,6 @@ This project was developed in multiple phases, each representing a major subsyst
 
 ---
 
-## 📷 Screenshots
-
-> ✨ _Paste your actual screenshots here later!_
 
 ### 🖥️ CLI in Action
 > _Example of entering a query and getting tabular output + plan summary_  
